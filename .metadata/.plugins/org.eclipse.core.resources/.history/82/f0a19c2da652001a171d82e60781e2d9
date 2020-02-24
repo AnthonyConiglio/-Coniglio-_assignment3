@@ -1,0 +1,18 @@
+package coniglio_problem1;
+import java.security.SecureRandom; 
+public class CAI1 {
+
+	public static void main(String[] args) {
+		 SecureRandom rand = new SecureRandom(); 
+		  
+	        // Generate random integers in range 0 to 999 
+	        int rand_int1 = rand.nextInt(10); 
+	        int rand_int2 = rand.nextInt(10); 
+	  
+	        // Print random integers 
+	        System.out.print("How much is " + rand_int1); 
+	        System.out.print(" times " + rand_int2); 
+
+	}
+
+}

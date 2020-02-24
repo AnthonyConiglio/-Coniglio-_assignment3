@@ -1,0 +1,25 @@
+package coniglio_problem1;
+import java.security.SecureRandom; 
+import java.util.Scanner;
+public class CAI1 {
+
+	public static void main(String[] args) {
+		 SecureRandom rand = new SecureRandom(); 
+		 
+		 Scanner console = new Scanner(System.in);
+	       
+	        int rand_int1 = rand.nextInt(10); 
+	        int rand_int2 = rand.nextInt(10); 
+	        int times = rand_int1*rand_int2;
+	        int answer;
+	       
+	       System.out.println("How much is " + rand_int1 + " times " + rand_int2 + "?"); 
+	       System.out.print("Type answer here:");
+	       answer =console.nextInt();
+	       
+	       
+	       
+	       
+	}
+
+}

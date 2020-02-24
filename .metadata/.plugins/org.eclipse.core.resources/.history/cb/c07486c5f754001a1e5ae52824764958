@@ -1,0 +1,73 @@
+package coniglio_problem1;
+
+import java.security.SecureRandom;
+import java.util.*;
+public class Main
+{
+   public static void main(String[] args) {
+   //call quiz from main
+   quiz();
+   }
+  
+   /**
+   * Create a method quiz which contains all the program logic and calls this in main
+   */
+   public static void quiz(){
+   SecureRandom secureRandom = new SecureRandom();
+       // Generate two random integers in range 0 to 9 for asking question
+int number1 = secureRandom.nextInt(10);
+int number2 = secureRandom.nextInt(10);
+//calculate the expected answer
+int expectedAnswer = number1 * number2;
+int studentAnswer =-1;
+//create an infinite loop and breaks the loop if answer is correct
+while(true)
+{
+//first ask question to the student
+askQuestion(number1,number2);
+//then read the response of the student
+studentAnswer = readResponse();
+//verify the answer, check whether expected answer and student answer are matching
+//if matching gthen display the Correct Response and break the loop which will exit the program
+if (isAsnwerCorrect(expectedAnswer,studentAnswer))
+{
+displayCorrectResponse();
+break;
+}
+else
+{
+//in case of incorect answer , displayInorrectResponse and continue the loop
+displayInorrectResponse();
+}
+  
+}
+  
+   }
+  
+   //method to ask question
+   public static void askQuestion(int num1, int num2){
+   System.out.print("How much " + num1 + " times " + num2 + "?? ");
+   }
+  
+   //method to read response from the student and return the response
+   public static int readResponse(){
+   Scanner scnr = new Scanner(System.in);
+   int answer = scnr.nextInt();
+   return answer;
+   }
+  
+   //verify the expected answer and student answers are matching
+   public static boolean isAsnwerCorrect(int expectedAnswer, int studentAnswer){
+   return expectedAnswer == studentAnswer;
+   }
+  
+   //display correct answer
+   public static void displayCorrectResponse(){
+   System.out.println("Very good!");
+   }
+  
+   //display the incorrect answer response
+   public static void displayInorrectResponse(){
+   System.out.println("No. Please try again.");
+   }
+}
